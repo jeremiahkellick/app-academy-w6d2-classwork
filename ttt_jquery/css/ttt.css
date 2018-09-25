@@ -1,0 +1,54 @@
+.list {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.square {
+  width: 100px;
+  box-sizing: border-box;
+  height: 100px;
+  border: 5px solid black;
+  background-color: gray;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.over .square{
+  cursor: default;
+  background-color: white;
+}
+
+.over .square:hover{
+  background-color: white;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+/* .mark{
+  vertical-align: middle;
+} */
+
+.square:hover {
+  background-color: yellow;
+}
+
+.square.white {
+  cursor: default;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+}
