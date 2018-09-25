@@ -33,13 +33,29 @@ class View {
     $square.addClass("white");
     $square.text(currentMark);
     if (this.game.isOver()) {
-      let message = "It's a tie!";
-      const winner = this.game.winner();
-      if (winner) message = `${winner} wins!`;
-      this.$list.after($('<h1></h1>').text(message));
-
-      this.$list.addClass("over");
+      this.finishGame();
     }
+  }
+
+  finishGame() {
+    let message = "It's a tie!";
+    const winner = this.game.winner();
+    if (winner) {
+      message = `${winner} wins!`;
+      const winningSpaces = this.game.winningSpaces();
+      $('li').each(function() {
+        const $li = $(this);
+        const pos = $li.data('pos');
+        if (winningSpaces.some(space => {
+          return space[0] === pos[0] && space[1] === pos[1];
+        })) {
+          $li.addClass('green');
+        }
+      });
+    }
+    this.$list.after($('<h1></h1>').text(message));
+
+    this.$list.addClass("over");
   }
 
   setupBoard() {

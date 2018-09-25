@@ -31,6 +31,10 @@ class Game {
     });
   }
 
+  winningSpaces() {
+    return this.board.winningSpaces;
+  }
+
   run(reader, gameCompletionCallback) {
     this.promptMove(reader, move => {
       try {

@@ -70,6 +70,7 @@ class Board {
     for (let i = 0; i < posSeqs.length; i++) {
       const winner = this.winnerHelper(posSeqs[i]);
       if (winner != null) {
+        this.winningSpaces = posSeqs[i];
         return winner;
       }
     }
